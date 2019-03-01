@@ -1,0 +1,14 @@
+
+.DS_Store
+
+*.~
+*.dll
+*.lib
+*.o
+*.out
+*.so
+*.swo
+*.swp
+
+o.obj
+thumbs.db
