@@ -1,5 +1,11 @@
 #include "spi.h"
 
+int spi_cs0_fd;				//file descriptor for the SPI device
+int spi_cs1_fd;				//file descriptor for the SPI device
+unsigned char spi_mode;
+unsigned char spi_bitsPerWord;
+unsigned int spi_speed;
+
 // spi_device 0=CS0, 1=CS1
 int spi_open_port (int spi_device) {
     int *spi_cs_fd;
