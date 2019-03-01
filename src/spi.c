@@ -1,22 +1,3 @@
-// Heavily based on (copied from)
-// https://raspberry-projects.com/pi/programming-in-c/spi/using-the-spi-interface
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-
-// Needed for SPI port
-#include <fcntl.h>
-#include <sys/ioctl.h>
-#include <linux/spi/spidev.h>
-#include <unistd.h>
-
-
-int spi_cs0_fd;				//file descriptor for the SPI device
-int spi_cs1_fd;				//file descriptor for the SPI device
-unsigned char spi_mode;
-unsigned char spi_bitsPerWord;
-unsigned int spi_speed;
 
 // spi_device 0=CS0, 1=CS1
 int spi_open_port (int spi_device) {
