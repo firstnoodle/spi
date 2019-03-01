@@ -1,3 +1,4 @@
+#include "spi.h"
 
 // spi_device 0=CS0, 1=CS1
 int spi_open_port (int spi_device) {
