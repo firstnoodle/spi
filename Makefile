@@ -15,13 +15,13 @@ LIBS = -lm
 
 
 # define dependencies / includes
-_DEPENDENCY_LIST = hellomake.h obj.h
+_DEPENDENCY_LIST = spi.h
 DEPENDENCIES = $(patsubst %, $(INCLUDE_DIR)/%, $(_DEPENDENCY_LIST))
 $(info ${DEPENDENCIES})
 
 
 # define object files
-_OBJECT_LIST = main.o hellofunc.o obj.o
+_OBJECT_LIST = spi.o 
 OBJECT_FILES = $(patsubst %, $(OBJ_DIR)/%, $(_OBJECT_LIST))
 $(info ${OBJECT_FILES})
 
