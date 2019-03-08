@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
+#include <string.h>
 
 // Needed for SPI port
 #include <fcntl.h>
