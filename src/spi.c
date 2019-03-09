@@ -73,7 +73,7 @@ int spi_close_port (int spi_device) {
     if (spi_device) spi_cs_fd = &spi_cs1_fd;
     else spi_cs_fd = &spi_cs0_fd;
 
-    if(close(*spi_cs_fd); < 0) {
+    if(close(*spi_cs_fd) < 0) {
     	perror("Error - Could not close SPI device");
     	exit(1);
     }
@@ -85,12 +85,13 @@ int spi_close_port (int spi_device) {
 int spi_write_read (int spi_device, unsigned char *data, int length) {
 	struct spi_ioc_transfer spi[length];
     int *spi_cs_fd;
+	int i;
 
     if (spi_device) spi_cs_fd = &spi_cs1_fd;
     else spi_cs_fd = &spi_cs0_fd;
 
 	//one spi transfer for each byte
-	for (int i = 0 ; i < length ; i++) {
+	for (i = 0 ; i < length ; i++) {
 		memset(&spi[i], 0, sizeof (spi[i]));
 		spi[i].tx_buf        = (unsigned long)(data + i); // transmit from "data"
 		spi[i].rx_buf        = (unsigned long)(data + i); // receive into "data"
