@@ -15,6 +15,7 @@
 #define CHARGE_PUMP						0x8d
 #define SET_HIGHER_COLUMN_PAGE_ADDR 	0x14
 #define DISPLAY_ON                  	0xaf
+#define SET_LOWER_COLUMN_START_ADDR		0x00
 
 /*
 #define MEMORY_MODE          					0x20 ///< See datasheet
@@ -70,6 +71,6 @@ static const unsigned char initbuf[] = {
 	CHARGE_PUMP,
 	SET_HIGHER_COLUMN_PAGE_ADDR,
 	DISPLAY_ON,
-	SET_MEMORY
+	SET_LOWER_COLUMN_START_ADDR
 };
 
