@@ -9,7 +9,8 @@
 #define SET_COM_OUTPUT_SCAN_DIR     	0xc8
 #define SET_COM_PINS                	0xda // 0x12 => RESET 
 #define SET_CONTRAST_CONTROL        	0x81 // 0xff => MAX contrast
-#define ENTIRE_DISPLAY_ON_RESET     	0xa4 // A4 resume to RAM content, A5 entire display on
+#define ENTIRE_DISPLAY_ON		     	0xa5
+#define ENTIRE_DISPLAY_ON_RESET     	0xa4
 #define INVERSE_OFF                 	0xa6
 #define SET_DISPLAY_CLOCK_DIVIDE    	0xd5 // 0x80 => two values in one hex! Divide ratio (1) and Osc Freq. (RESET)
 #define CHARGE_PUMP						0x8d
@@ -55,7 +56,7 @@
 #define SET_VERTICAL_SCROLL_AREA             	0xA3 ///< Set scroll rangedefine SET_MEMORY                  	0x20 // 0x02 Page addressing mode
 */
 
-static const unsigned char initbuf[] = {
+unsigned char initbuf[] = {
 	DISPLAY_OFF, 
 	SET_MULTIPLEX_RATIO, 0x3f,
 	SET_DISPLAY_OFFSET, 0x00,
@@ -71,6 +72,7 @@ static const unsigned char initbuf[] = {
 	CHARGE_PUMP,
 	SET_HIGHER_COLUMN_PAGE_ADDR,
 	DISPLAY_ON,
-	SET_LOWER_COLUMN_START_ADDR
+	SET_LOWER_COLUMN_START_ADDR,
+	ENTIRE_DISPLAY_ON
 };
 

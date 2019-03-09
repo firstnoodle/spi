@@ -11,13 +11,13 @@ int main(int argc, char *argv[]) {
     }
 	printf( "\nDISPLAY_OFF = %X\n", DISPLAY_OFF );
 	*/
-	if(spi_open_port(0)) {
+	if(!spi_open_port(0)) {
 		printf("SPI port open\n");
 	}
-	// if(spi_read_write(initbuf)) {
-	// 	printf("initbuf written successfully!\n");
-	// }
-	if(spi_close_port(0)) {
+	if(!spi_write_read(0, initbuf, sizeof(initbuf))) {
+		printf("initbuf written successfully!\n");
+	}
+	if(!spi_close_port(0)) {
 		printf("SPI port closed\n");
 	}
 	printf("Goodbye oled\n\n");
