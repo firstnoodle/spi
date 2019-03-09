@@ -15,13 +15,13 @@ LIBS = -lm
 
 
 # define dependencies / includes
-_DEPENDENCY_LIST = spi.h
+_DEPENDENCY_LIST = spi.h oled.h SSD1306_Commands.h
 DEPENDENCIES = $(patsubst %, $(INCLUDE_DIR)/%, $(_DEPENDENCY_LIST))
 $(info ${DEPENDENCIES})
 
 
 # define object files
-_OBJECT_LIST = spi.o 
+_OBJECT_LIST = spi.o oled.h
 OBJECT_FILES = $(patsubst %, $(OBJ_DIR)/%, $(_OBJECT_LIST))
 $(info ${OBJECT_FILES})
 
@@ -37,7 +37,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(DEPENDENCIES)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 # link object files into executable..?
-hellomake: $(OBJECT_FILES)
+spi: $(OBJECT_FILES)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 
