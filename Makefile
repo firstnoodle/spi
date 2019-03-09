@@ -21,7 +21,7 @@ $(info ${DEPENDENCIES})
 
 
 # define object files
-_OBJECT_LIST = spi.o oled.h
+_OBJECT_LIST = spi.o oled.o
 OBJECT_FILES = $(patsubst %, $(OBJ_DIR)/%, $(_OBJECT_LIST))
 $(info ${OBJECT_FILES})
 
