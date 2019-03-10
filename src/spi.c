@@ -92,6 +92,7 @@ int spi_write_read (int spi_device, unsigned char *data, int length) {
 
 	//one spi transfer for each byte
 	for (i = 0 ; i < length ; i++) {
+		printf("->\t%i\t%x\n",i, data[i]);
 		memset(&spi[i], 0, sizeof (spi[i]));
 		spi[i].tx_buf        = (unsigned long)(data + i); // transmit from "data"
 		spi[i].rx_buf        = (unsigned long)(data + i); // receive into "data"
